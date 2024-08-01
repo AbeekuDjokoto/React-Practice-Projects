@@ -2,9 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  --black: #1a201d;
+  --white: #ffffff;
+  --primary-green: #2a8851;
+  --light-green: #5bae7d;
+  --lime-green: #f9fff8;
+  --primary-green-rgba: rgba(42, 136, 81, 1);
+  --bg-green: #d9ecd4;
+  --grey-light: #f4f6fa;
+  --placeholder: #c3c4c7;
+  --red: #f3603f;
+  --orange: #ff8828;
+  --success: #02c567;
+  --bg: #e8e8e8;
+  --secondary: #ffec89;
+}
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Sofia Pro", sans-serif;
+}
+
+.Toastify__toast {
+  padding: 1rem;
+}
+
+.Toastify__toast--success {
+  align-items: center;
+  background: var(--success);
+  border-radius: 0.5rem;
+}
+
+.Toastify__toast--error {
+  align-items: center;
+  background: var(--red);
+  border-radius: 0.5rem;
+}
+
+.Toastify__close-button--light {
+  color: var(--white);
+  opacity: 1;
+}
+
+.Toastify__close-button {
+  align-self: center;
+}
+
+.Toastify__toast-body > div:last-child {
+  font-family: "Figtree";
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  letter-spacing: 0.002em;
+  color: var(--white);
+}
+
+.Toastify--animate-icon > svg {
+  fill: var(--white);
+}
+
+.Toastify__toast-body {
+  gap: 1.125rem;
 }

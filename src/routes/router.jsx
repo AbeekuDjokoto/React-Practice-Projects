@@ -1,11 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Home } from "../pages/Home";
-import { LandingPage } from "../pages";
+
+import Login from "../features/Auth/Pages/Login/Login";
+import { LandingPage } from "../features";
+import AuthLayouts from "../layouts/authLayouts/AuthLayouts";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <AuthLayouts />,
+    children: [{ path: "", element: <Login /> }],
   },
   {
     path: "/landing",

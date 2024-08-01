@@ -1,4 +1,5 @@
 import "./index.css";
+import "./assets/fonts/stylesheet.css";
 
 import { Providers } from "./components/Provider";
 
