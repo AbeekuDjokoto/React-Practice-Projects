@@ -14,7 +14,7 @@ export function useLogin() {
       const { token, refreshToken, ...userData } = data.data;
       successToast("Successfully logged in");
       authenticate(token, refreshToken, userData);
-      navigate("/landing");
+      navigate("/dashboard");
     },
     onError: async (data) => {
       errorToast(data?.response?.data?.message);

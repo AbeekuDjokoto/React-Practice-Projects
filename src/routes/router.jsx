@@ -1,8 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import Login from "../features/Auth/Pages/Login/Login";
-import { LandingPage } from "../features";
+
 import AuthLayouts from "../layouts/authLayouts/AuthLayouts";
+import DashboardLayout from "../layouts/dashboardLayout/DashboardLayout";
+import DynamicImage from "../features/Dashboard/Pages/DynamicImage";
+import Auth from "../features/Dashboard/Pages/Auth";
 
 export const router = createBrowserRouter([
   {
@@ -11,7 +14,11 @@ export const router = createBrowserRouter([
     children: [{ path: "", element: <Login /> }],
   },
   {
-    path: "/landing",
-    element: <LandingPage />,
+    path: "/dashboard",
+    element: <DashboardLayout />,
+    children: [
+      { path: "", element: <DynamicImage /> },
+      { path: "auth", element: <Auth /> },
+    ],
   },
 ]);
