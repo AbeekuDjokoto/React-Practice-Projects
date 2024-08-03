@@ -16,7 +16,7 @@ const Login = () => {
     resolver: zodResolver(loginFormSchema),
     mode: "onSubmit",
   });
-  const { mutate } = useLogin();
+  const { mutate, isLoading } = useLogin();
   const onSubmit = (data) => {
     mutate(data);
   };
@@ -39,7 +39,9 @@ const Login = () => {
           type="password"
           error={errors.password?.message}
         />
-        <BaseButton className="h-12 leading-6">Continue</BaseButton>
+        <BaseButton isLoading={isLoading} className="h-12 leading-6">
+          Continue
+        </BaseButton>
       </form>
     </div>
   );

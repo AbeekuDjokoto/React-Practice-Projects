@@ -53,7 +53,6 @@ const Menus = [
 
 const Sidebar = () => {
   const { pathname } = useLocation();
-  console.log({ pathname });
   return (
     <div className="py-2 px-[38.875px] flex flex-col bg-[#f5f5f5] rounded-lg ">
       <div className="flex flex-col gap-2 pt-4 ">

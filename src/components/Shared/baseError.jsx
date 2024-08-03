@@ -4,7 +4,7 @@ const BaseError = ({ error }) => {
   return (
     <>
       {error ? (
-        <div className="text-[#9b1000] text-xs pt-1 flex gap-2 items-center text-[var(--error)]">
+        <div className="text-[#9b1000] text-xs pt-1 flex gap-2 items-center">
           {error}
         </div>
       ) : null}

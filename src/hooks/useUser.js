@@ -7,5 +7,5 @@ export function useUserData() {
     queryFn: async () => await httpClient.get("/user/me"),
   });
 
-  return { data, isLoading };
+  return { data: data?.data, isLoading };
 }

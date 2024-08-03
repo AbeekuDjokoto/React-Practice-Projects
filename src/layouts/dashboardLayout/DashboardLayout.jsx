@@ -6,7 +6,7 @@ const DashboardLayout = () => {
     <div className="">
       <div className="flex gap-8 h-screen">
         <Sidebar />
-        <div>
+        <div className="max-w-[1050px] w-full">
           <Outlet />
         </div>
       </div>
