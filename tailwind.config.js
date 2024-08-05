@@ -6,6 +6,12 @@ export default {
       animation: {
         "lds-ring": "lds-ring 1.2s linear infinite",
       },
+      width: {
+        90: "90%",
+      },
+      maxWidth: {
+        custom: "var(--max-width)",
+      },
       keyframes: {
         "lds-ring": {
           "0%": { transform: "rotate(0deg)" },

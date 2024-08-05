@@ -12,6 +12,7 @@ import {
   TodoIcon,
   UserIcon,
 } from "../../assets/icons/icons";
+import { useUserData } from "../../hooks";
 
 const Menus = [
   {
@@ -53,11 +54,16 @@ const Menus = [
 
 const Sidebar = () => {
   const { pathname } = useLocation();
+  const { data } = useUserData();
   return (
-    <div className="py-2 px-[38.875px] flex flex-col bg-[#f5f5f5] rounded-lg ">
+    <div className="py-2 px-[38.875px] max-w-[350px] w-full flex flex-col border border-[#d1d7dc]">
       <div className="flex flex-col gap-2 pt-4 ">
-        <p className="text-[30.4px] leading-11 font-bold">Welcome, Accra!</p>
-        <p>Account Balance</p>
+        <p className="text-2xl leading-[29px] font-bold text-[#2d2f31]">
+          Welcome, {data?.firstName}!
+        </p>
+        <div className="max-w-[120px] w-full h-[120px] rounded-full">
+          <img src={data?.image} loading="lazy" />
+        </div>
       </div>
       <div>
         <div className="py-4 font-bold leading-6 text-[#211E22]">

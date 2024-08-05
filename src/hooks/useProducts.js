@@ -2,10 +2,10 @@ import { useQuery } from "@tanstack/react-query";
 import { httpClient } from "../config";
 import { useForm } from "react-hook-form";
 
-export function useUserData() {
+export function useProducts() {
   const { data, isPending: isLoading } = useQuery({
-    queryKey: ["useUser"],
-    queryFn: async () => await httpClient.get("/user/me"),
+    queryKey: ["getProducts"],
+    queryFn: async () => await httpClient.get("/products"),
   });
 
   const { register, handleSubmit, control, formState } = useForm({});

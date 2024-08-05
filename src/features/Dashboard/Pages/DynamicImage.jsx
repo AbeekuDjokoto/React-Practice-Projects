@@ -11,17 +11,19 @@ const DynamicImage = () => {
           <PreLoader />
         </div>
       ) : (
-        <div className="py-2 px-[38.875px] flex flex-col bg-[#f5f5f5] rounded-lg w-full">
-          <div className="flex flex-col gap-2 pt-4 ">
-            <p className="text-[30.4px] leading-11 font-bold">
-              Welcome, Accra!
+        <div className="flex flex-col rounded-lg w-full">
+          <div className="flex flex-col gap-2 text-[#2d2f31] text-center py-4 border border-[#d1d7dc]">
+            <p className="text-2xl leading-[29px] font-bold">Dynamic Images</p>
+            <p className="text-base leading-[22px]">
+              Edit your account settings and change your password here.
             </p>
-            <p>Account Balance</p>
-            <img src={blob} alt="" />
           </div>
-          <div>
-            <div className="py-4 font-bold leading-6 text-[#211E22]">
-              <p className="text-base">Project Routes</p>
+          <div className="border border-b-[#d1d7dc] border-l-[#d1d7dc] border-r-[#d1d7dc]">
+            <div className="mx-auto w-[90%] lg:w-[69%] flex flex-col gap-2 py-6">
+              <p className="text-sm leading-[17px] font-bold text-[#2d2f31]">
+                Dynamic Images
+              </p>
+              <img src={blob} alt="" />
             </div>
           </div>
         </div>
