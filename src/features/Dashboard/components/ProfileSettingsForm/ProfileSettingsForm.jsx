@@ -16,7 +16,7 @@ const ProfileSettingsForm = (data) => {
     address,
     company,
   } = data.data;
-  console.log(data);
+
   const { register, control } = useUserData();
 
   return (

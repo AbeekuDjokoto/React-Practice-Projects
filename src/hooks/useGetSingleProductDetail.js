@@ -2,16 +2,16 @@ import { useQuery } from "@tanstack/react-query";
 import { httpClient } from "../config";
 import { useForm } from "react-hook-form";
 
-export function useProducts() {
+export function useSingleProductsDetail(id) {
   const { data, isPending: isLoading } = useQuery({
-    queryKey: ["getProducts"],
-    queryFn: async () => await httpClient.get("/products"),
+    queryKey: ["getSingleProductDetail"],
+    queryFn: async () => await httpClient.get(`/products/${id}`),
   });
 
   const { register, handleSubmit, control, formState } = useForm({});
 
   return {
-    products: data?.data,
+    productDetail: data?.data,
     isLoading,
     register,
     handleSubmit,

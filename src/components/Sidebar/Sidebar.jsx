@@ -56,7 +56,7 @@ const Sidebar = () => {
   const { pathname } = useLocation();
   const { data } = useUserData();
   return (
-    <div className="py-2 px-[38.875px] max-w-[350px] w-full flex flex-col border border-[#d1d7dc]">
+    <div className="py-2 px-[38.875px] w-[450px] flex flex-col border border-[#d1d7dc]">
       <div className="flex flex-col gap-2 pt-4 ">
         <p className="text-2xl leading-[29px] font-bold text-[#2d2f31]">
           Welcome, {data?.firstName}!

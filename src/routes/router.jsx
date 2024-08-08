@@ -7,6 +7,7 @@ import DashboardLayout from "../layouts/dashboardLayout/DashboardLayout";
 import DynamicImage from "../features/Dashboard/Pages/DynamicImage";
 import Auth from "../features/Dashboard/Pages/Auth";
 import Products from "../features/Dashboard/Pages/Products";
+import GetSingleProducts from "../features/Dashboard/Pages/GetSingleProducts";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ export const router = createBrowserRouter([
       { path: "", element: <DynamicImage /> },
       { path: "auth", element: <Auth /> },
       { path: "products", element: <Products /> },
+      { path: "products/:id", element: <GetSingleProducts /> },
     ],
   },
 ]);

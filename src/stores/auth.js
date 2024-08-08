@@ -26,6 +26,8 @@ const authStore = (set, get) => ({
 
   getToken: () => get().token,
   setToken: (newToken) => set({ token: newToken }),
+  getRefreshToken: () => get().refreshToken,
+  setRefreshToken: (newToken) => set({ refreshToken: newToken }),
 });
 
 const useAuthStore = create(

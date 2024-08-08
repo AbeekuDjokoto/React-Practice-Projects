@@ -12,9 +12,11 @@ const columns = [
   columnHelper.accessor("title", {
     id: "id",
     header: "Title",
+    cell: (info) => info.getValue(),
   }),
   columnHelper.accessor("description", {
     header: "Description",
+    cell: (info) => info.getValue(),
   }),
   columnHelper.accessor("category", {
     header: "Category",
@@ -22,48 +24,21 @@ const columns = [
   columnHelper.accessor("price", {
     header: "Price",
   }),
-  columnHelper.accessor("discountPercentage", {
-    header: "Discount Percentage",
-  }),
-  columnHelper.accessor("rating", {
-    header: "Rating",
-  }),
   columnHelper.accessor("stock", {
     header: "Stock",
   }),
   columnHelper.accessor("tags", {
     header: "Tags",
   }),
-  columnHelper.accessor("brand", {
-    header: "Brand",
-  }),
-  columnHelper.accessor("sku", {
-    header: "Sku",
-  }),
   columnHelper.accessor("weight", {
     header: "Weight",
   }),
-  columnHelper.accessor(
-    (row) => {
-      const { width, height, depth } = row.dimensions;
-      return `weight: ${width}, height: ${height}, depth: ${depth}`;
-    },
-    {
-      header: "Dimension",
-    }
-  ),
   columnHelper.accessor("warrantyInformation", {
     header: "Warranty Information",
   }),
-  columnHelper.accessor("shippingInformation", {
-    header: "shipping Information",
-  }),
-  columnHelper.accessor("returnPolicy", {
-    header: "Return Policy",
-  }),
 ];
 
-export const Table = ({ data }) => {
+export const Table = ({ data, tableRowHandler }) => {
   const table = useReactTable({
     data,
     columns,
@@ -72,7 +47,7 @@ export const Table = ({ data }) => {
   return (
     <div className="w-full overflow-y-auto">
       <table className="w-full border-collapse">
-        <thead className="text-left">
+        <thead className="text-left text-[#6E6893] border border-[#6E6893] bg-[#F4F2FF] whitespace-nowrap">
           {table.getHeaderGroups().map((headerGroup) => {
             return (
               <tr key={headerGroup.id}>
@@ -98,7 +73,11 @@ export const Table = ({ data }) => {
         <tbody>
           {table.getRowModel().rows.map((row) => {
             return (
-              <tr key={row.id}>
+              <tr
+                key={row.id}
+                className="border border-[#6E6893]"
+                onClick={() => tableRowHandler(row.original)}
+              >
                 {row.getVisibleCells().map((cell) => {
                   return (
                     <td
@@ -123,4 +102,5 @@ export const Table = ({ data }) => {
 
 Table.propTypes = {
   data: PropTypes.array,
+  tableRowHandler: PropTypes.func,
 };
