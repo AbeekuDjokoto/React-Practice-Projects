@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
       { path: "", element: <DynamicImage /> },
       { path: "auth", element: <Auth /> },
       { path: "products", element: <Products /> },
-      { path: "products/:id", element: <GetSingleProducts /> },
     ],
   },
+  { path: "products/:id", element: <GetSingleProducts /> },
 ]);

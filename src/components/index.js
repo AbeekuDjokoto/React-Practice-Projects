@@ -4,3 +4,6 @@ export * from "./Shared";
 export * from "./Sidebar";
 export * from "./Table";
 export * from "./EmptyState";
+export * from "./StarRating";
+export * from "./LazyLoad";
+export * from "./Pagination";

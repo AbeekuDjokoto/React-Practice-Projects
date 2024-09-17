@@ -75,7 +75,7 @@ export const Table = ({ data, tableRowHandler }) => {
             return (
               <tr
                 key={row.id}
-                className="border border-[#6E6893]"
+                className="border border-[#6E6893] cursor-pointer"
                 onClick={() => tableRowHandler(row.original)}
               >
                 {row.getVisibleCells().map((cell) => {

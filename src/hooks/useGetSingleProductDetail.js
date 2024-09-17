@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 
 export function useSingleProductsDetail(id) {
   const { data, isPending: isLoading } = useQuery({
-    queryKey: ["getSingleProductDetail"],
+    queryKey: ["getSingleProductDetail", id],
     queryFn: async () => await httpClient.get(`/products/${id}`),
   });
 

@@ -1,7 +1,17 @@
-import { FallingLines } from "react-loader-spinner";
+import { Circles } from "react-loader-spinner";
 
 const PreLoader = () => {
-  return <FallingLines color="#7b189f" width="100" visible={true} />;
+  return (
+    <Circles
+      height="80"
+      width="80"
+      color="#7b189f"
+      ariaLabel="circles-loading"
+      wrapperStyle={{}}
+      wrapperClass=""
+      visible={true}
+    />
+  );
 };
 
 export default PreLoader;
